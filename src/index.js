@@ -85,12 +85,11 @@ async function onSearchForm(evt) {
       Notify.success(`'Hooray! We found ${results.totalHits} images.'`);
     }
 
-    console.log('results', results);
+    // console.log('results', results);
   } catch (error) {
     Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
-    console.log(error, 'str 81');
   }
   searchNumber += 1;
 }
@@ -137,7 +136,7 @@ btnLoadMore.addEventListener('click', async () => {
   //     document.querySelector('.gallery').firstElementChild.scrollHeight;
   //   console.log(cardHeight * 2.92);
   window.scrollBy({
-    top: windowHeite - 130,
+    top: windowHeite * 0.85,
     behavior: 'smooth',
   });
 });
