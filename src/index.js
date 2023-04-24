@@ -125,7 +125,7 @@ btnLoadMore.addEventListener('click', async () => {
   const cardHeight =
     document.querySelector('.gallery').firstElementChild.scrollHeight;
   window.scrollBy({
-    top: cardHeight * 3,
+    top: cardHeight * 3.2,
     behavior: 'smooth',
   });
 });
