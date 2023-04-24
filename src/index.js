@@ -8,6 +8,17 @@ const searchForm = document.querySelector('#search-form');
 const btnLoadMore = document.querySelector('.load-more');
 const gallerySection = document.querySelector('.gallery');
 
+let windowHeite = document.documentElement.clientHeight;
+let windowWidth = document.documentElement.clientWidth;
+
+window.addEventListener('resize', myFunction);
+
+function myFunction() {
+  windowHeite = document.documentElement.clientHeight;
+  windowWidth = document.documentElement.clientWidth;
+  //   console.log('windowWidth ', windowWidth, 'windowHeite ', windowHeite);
+}
+
 let gallery = new SimpleLightbox('.gallery a', { enableKeyboard: true }); // создание галереи по классу
 let q = ''; // параметр для Qwery запроса
 let searchResult = ''; // значение инпута по умолчанию
@@ -122,10 +133,11 @@ btnLoadMore.addEventListener('click', async () => {
   }
 
   // ------------------- прокрутка страницы----------------------
-  const cardHeight =
-    document.querySelector('.gallery').firstElementChild.scrollHeight;
+  //   const cardHeight =
+  //     document.querySelector('.gallery').firstElementChild.scrollHeight;
+  //   console.log(cardHeight * 2.92);
   window.scrollBy({
-    top: cardHeight * 3,
+    top: windowHeite - 130,
     behavior: 'smooth',
   });
 });
